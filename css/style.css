@@ -30,3 +30,33 @@ body
 {
 	text-align: center;
 }
+
+
+#searchBox input[type=text]
+{
+	width: calc(100% - 140px);
+	padding: 8px 20px;
+    border: 1px solid #C5C5C5;
+    border-radius: 3px;
+}
+#searchBox input[type=button]
+{
+	padding: 8px 5px;
+	background-color: #C3C3C3;
+	border: none;
+	border-radius: 3px;
+	color: #FFF;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+#searchBox input[type=button]:hover
+{
+	background-color: #939393;
+}
+
+#searchBox, #queue-play
+{
+	margin-left: 20px;
+	margin-right: 20px;
+}
