@@ -1,0 +1,32 @@
+*
+{
+	margin:0;
+	padding: 0;
+}
+
+body
+{
+	font-family: Arial, Tahoma;
+}
+
+#main-left
+{
+	float: left;
+	width: 50%;
+}
+
+#main-right
+{
+	float: right;
+	width: 50%;
+}
+
+#searchBox
+{
+	padding: 40px 20px;
+}
+
+#searchBox p:nth-child(1)
+{
+	text-align: center;
+}
