@@ -11,3 +11,53 @@ function init() {
         console.log('Youtube API already');
     });
 }
+
+// event enter input tag
+$('#keyword').keypress(function(e) {
+    if (e.which == 13) {
+        search($("#keyword").val());
+    }
+});
+
+function search(keyword) {
+    console.log(keyword);
+    $( "#searchBox" ).submit(function(event) {
+        event.preventDefault();
+        $.get(
+            "https://www.googleapis.com/youtube/v3/search", {
+                part: 'snippet,id',
+                q: keyword,
+                maxResults: 50,
+                type: 'video',
+                key: apiKey
+            },
+            function(data) {
+                // clear list search
+                $('#resultSearch').html("");
+
+
+                var content = "";
+                for (var i = 0; i < data.items.length; i++) {
+                    if (data.items.length > 0) {
+                        content = content + getResults(data.items[i]);
+                    }
+                }
+
+                // show list video search
+                $('#resultSearch').append(content);
+
+                // call when click add button
+                $(".add").click(function(){
+                    // get index item in list search when click add button
+                    var index = $(this).parent().index();
+                    // add video clicked above to play
+                    addVideoToPlay(data.items[index]);
+                    // remove item selected in list search
+                    $(this).parent().remove();
+                    // remove element data2 array
+                    data.items.splice(index, 1);
+                })
+
+            });
+    });
+}
