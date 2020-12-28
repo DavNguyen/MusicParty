@@ -78,4 +78,5 @@ function getResults(item) {
             "</div>" +
             "<button class='add' >Add</button>" +
         "</div>";
+    return output;
 }
