@@ -61,3 +61,21 @@ function search(keyword) {
             });
     });
 }
+
+// return item search
+function getResults(item) {
+    // get properties of item
+    var videoID = item.id.videoId;
+    var title = item.snippet.title;
+    var thumb = item.snippet.thumbnails.high.url;
+    var channelTitle = item.snippet.channelTitle;
+    var output =
+        "<div class='item-video item-search'>" +
+            "<img class='thumb' src='" + thumb + "'>" +
+            "<div>" +
+                "<p class='title'>" + title + "</p>" +
+                "<p class='channelTitle'>" + channelTitle + "</p>" +
+            "</div>" +
+            "<button class='add' >Add</button>" +
+        "</div>";
+}
