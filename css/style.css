@@ -130,11 +130,42 @@ body
 {
 	background-color: #1565C0;
 }
-.item-video .play:hover
+
+
+#video
 {
-	background-color: #00C853;
+	margin-left: 20px;
 }
-.item-video .remove:hover
+
+#main-right #video iframe
 {
-	background-color: #FF5722;
+	margin: 0 auto;
 }
+#title-queue
+{
+	line-height: 50px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	padding: 0px 20px;
+	color: #D32F2F;
+}
+.clear-fix{
+	clear: both;
+}
+
+footer
+{
+	height: 50px;
+	background-color: #000000;
+}
+footer p
+{
+	line-height: 50px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+{box-sizing: border-box;}
+
