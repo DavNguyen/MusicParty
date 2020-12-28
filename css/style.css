@@ -130,7 +130,14 @@ body
 {
 	background-color: #1565C0;
 }
-
+.item-video .play:hover
+{
+	background-color: #00C853;
+}
+.item-video .remove:hover
+{
+	background-color: #FF5722;
+}
 
 #video
 {
@@ -168,4 +175,11 @@ footer p
 }
 
 {box-sizing: border-box;}
+
+footer
+{
+	height: 50px;
+	background-color: #000000;
+}
+
 
