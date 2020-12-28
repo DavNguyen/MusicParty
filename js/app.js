@@ -80,3 +80,17 @@ function getResults(item) {
         "</div>";
     return output;
 }
+
+function addVideoToPlay(item) {
+    console.log("hele");
+    var videoID = item.id.videoId;
+    var title = item.snippet.title;
+    var thumb = item.snippet.thumbnails.high.url;
+    var channelTitle = item.snippet.channelTitle;
+
+    if (isPlay == false) {
+        isPlay = true;
+        localStorage.clear();
+        localStorage.setItem("LOCAL", "[]");
+
+        play(videoID);
