@@ -200,5 +200,23 @@ footer p
   z-index: 9;
 }
 
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px 10px 10px 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 90%;
+  padding: 10px 10px 10px 10px;
+  margin: 5px 5px 5px 5px;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 100px;
+}
+
 
 
