@@ -138,7 +138,7 @@ function addVideoToQueue(videoID, title, thumb, duration, channelTitle) {
         deleteVideoForLocalStorage(videoID, index);
         deteleVideoForQueue(videoID);
     })
-    
+
     // call when click remove button
         $("#rm-" + videoID).click(function () {
             var index = $(this).parent().index();
@@ -158,5 +158,37 @@ function addVideoToLocalStorage(videoID) {
 
     queue.push(videoID);
     localStorage.setItem("LOCAL", JSON.stringify(queue));
+}
+
+// play video width video id
+function play(videoID) {
+    // console.log(videoID);
+    console.log("hello");
+
+    if(player != null){
+        player.loadVideoById({'videoId': videoID,
+           'startSeconds': 0,
+           'suggestedQuality': 'large'});
+
+    }else{
+        window.player = new YT.Player('video', {
+          height: '390',
+          width: '640',
+          videoId: videoID,
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+    }
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+
+function stopVideo() {
+    player.stopVideo();
 }
 
