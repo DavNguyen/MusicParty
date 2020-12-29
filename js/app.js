@@ -115,3 +115,18 @@ function addVideoToPlay(item) {
     }
 }
 
+function addVideoToQueue(videoID, title, thumb, duration, channelTitle) {
+    var output =
+        "<div class='item-video item-queue'>" +
+            "<img class='thumb' src='" + thumb + "'>" +
+            "<div>" +
+                "<p class='title'>" + title + "</p>" +
+                "<p class='channelTitle'>" + channelTitle + "</p>" +
+                "<p class='len'>" + duration + "</p>" +
+            "</div>" +
+            "<button class='play' id= '" + videoID + "'>Play</button>" +
+            "<button class='remove' id = 'rm-" + videoID + "'>Remove</button>" +
+        "</div>";
+
+  
+
