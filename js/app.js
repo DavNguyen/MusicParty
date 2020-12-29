@@ -197,4 +197,17 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     player.stopVideo();
 }
+function nextVideo() {
+    // load list id video from local storage and convert json to array
+    var value = localStorage.getItem("LOCAL");
+    var queue = JSON.parse(value);
+
+    // if queue is empty rerutn;
+    if (queue.length == 0) {
+        console.log("queue is empty");
+        return;
+    }
+    if (queue.length == 1) {
+        $("#title-queue").html("");
+    }
 
