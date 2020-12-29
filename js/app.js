@@ -130,3 +130,23 @@ function addVideoToQueue(videoID, title, thumb, duration, channelTitle) {
 
     $('#queue-play').append(output);
 
+    // call when click play button
+    $("#" + videoID).click(function () {
+        var index = $(this).parent().index();
+
+        play(videoID);
+        deleteVideoForLocalStorage(videoID, index);
+        deteleVideoForQueue(videoID);
+    })
+
+
+}
+
+function addVideoToLocalStorage(videoID) {
+    var value = localStorage.getItem("LOCAL");
+    var queue = JSON.parse(value);
+
+    queue.push(videoID);
+    localStorage.setItem("LOCAL", JSON.stringify(queue));
+}
+
