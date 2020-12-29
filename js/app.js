@@ -186,7 +186,13 @@ function play(videoID) {
 function onPlayerReady(event) {
     event.target.playVideo();
 }
+function onPlayerStateChange(event) {
+    // console.log(event.data);
 
+    if (event.data == YT.PlayerState.ENDED) {
+        nextVideo();
+    }
+}
 
 function stopVideo() {
     player.stopVideo();
