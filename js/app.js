@@ -94,3 +94,24 @@ function addVideoToPlay(item) {
         localStorage.setItem("LOCAL", "[]");
 
         play(videoID);
+
+    } else {
+        $("#title-queue").text("Play list")
+
+        // get duration video added to queue
+        var url = "https://www.googleapis.com/youtube/v3/videos?id=" + videoID + "&key=" + apiKey + "&part=snippet,contentDetails";
+        $.ajax({
+            async: false,
+            type: 'GET',
+            url: url,
+            success: function(data) {
+                if (data.items.length > 0) {
+                    var durationR = convert_time(data.items[0].contentDetails.duration);
+                    var duration = convertT(durationR);
+                    addVideoToQueue(videoID, title, thumb, duration, channelTitle);
+                }
+            }
+        });
+    }
+}
+
