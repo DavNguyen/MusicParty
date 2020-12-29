@@ -211,3 +211,26 @@ function nextVideo() {
         $("#title-queue").html("");
     }
 
+    // get id video at first queue and remove it from queue
+    var videoID = queue.shift();
+
+    // save queue back to local storage
+    localStorage.setItem("LOCAL", JSON.stringify(queue));
+
+    play(videoID);
+
+    deteleVideoForQueue(videoID);
+}
+// remove videoID from queue at index
+function deleteVideoForLocalStorage(videoID, index) {
+    var value = localStorage.getItem("LOCAL");
+    var queue = JSON.parse(value);
+
+    queue.splice(index, 1);
+    localStorage.setItem("LOCAL", JSON.stringify(queue));
+
+    if (queue.length == 0) {
+        $("#title-queue").html("");
+    }
+}
+
