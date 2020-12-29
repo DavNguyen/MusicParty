@@ -138,6 +138,16 @@ function addVideoToQueue(videoID, title, thumb, duration, channelTitle) {
         deleteVideoForLocalStorage(videoID, index);
         deteleVideoForQueue(videoID);
     })
+    
+    // call when click remove button
+        $("#rm-" + videoID).click(function () {
+            var index = $(this).parent().index();
+
+            deleteVideoForLocalStorage(videoID, index);
+            deteleVideoForQueue(videoID);
+        })
+
+        addVideoToLocalStorage(videoID);
 
 
 }
