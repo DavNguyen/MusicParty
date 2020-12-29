@@ -128,5 +128,5 @@ function addVideoToQueue(videoID, title, thumb, duration, channelTitle) {
             "<button class='remove' id = 'rm-" + videoID + "'>Remove</button>" +
         "</div>";
 
-  
+    $('#queue-play').append(output);
 
